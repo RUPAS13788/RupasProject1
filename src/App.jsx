@@ -38,13 +38,15 @@ const App = () => {
   return (
     <div className="bg-white dark:bg-gray-900 dark:text-white duration-200">
       <Navbar handleOrderPopup={handleOrderPopup}/>
-      <Routes handleOrderPopup={handleOrderPopup}>
-        <Route path="/Home" element={<Home />} />
-        <Route path="/Service" element={<Service />}/>
-        <Route path="/About" element={<About />}/>
-        <Route path="/Contact" element={<Contact />}/>
-        <Route path="/Login" element={<Login />}/>
-      </Routes>
+      <BrowserRouter basename="/shopsy-main">
+        <Routes handleOrderPopup={handleOrderPopup}>
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Service" element={<Service />}/>
+          <Route path="/About" element={<About />}/>
+          <Route path="/Contact" element={<Contact />}/>
+          <Route path="/Login" element={<Login />}/>
+        </Routes>
+      </BrowserRouter>
       <Hero handleOrderPopup={handleOrderPopup} />
       {/* <Products /> */}
       {/* <TopProducts handleOrderPopup={handleOrderPopup} /> */}
